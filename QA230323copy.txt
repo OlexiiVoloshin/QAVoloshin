@@ -1,3 +1,0 @@
-QA230323copy
-bla bla bla
-and again change through git for practice))))

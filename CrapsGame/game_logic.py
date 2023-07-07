@@ -27,18 +27,21 @@ def play_game():
             print("Спеціальний раунд - Додатковий раунд!")
 
             while True:
-                input("Натисніть Enter для кидка кубика в Додатковому раунді...")
-                dice = roll_dice()
-                print(f"Гравець {current_player + 1} кидає кубик в Додатковому раунді: {dice}")
+                input("Натисніть Enter для кидка кубиків в Додатковому раунді...")
+                dice1 = roll_dice()
+                dice2 = roll_dice()
+                total = dice1 + dice2
+                print(
+                    f"Гравець {current_player + 1} кидає кубики в Додатковому раунді: {dice1}, {dice2} (сума: {total})")
 
-                if dice == 7:
+                if total == 7:
                     print("Вихід з Додаткового раунду. Гравець не заробляє 1 бал")
                     break
-                elif dice in (3, 4, 5, 6, 9, 10):
+                elif total in (3, 4, 5, 6, 9, 10):
                     print("Вихід з Додаткового раунду. Гравець виграє 1 бал")
                     player_scores[current_player] += 1
                     break
-                elif dice in (2, 8, 12):
+                elif total in (2, 8, 12):
                     print("Продовження Додаткового раунду...")
                 else:
                     print("Непередбачене число. Спробуйте ще раз...")
